@@ -118,19 +118,48 @@ public class Sistema implements Metodos {
 
 	@Override
 	public void mostrar() { // chaval esto lo hice para ir viendo si entraba no lo borres
-		Magos mejor = null;
-		double maximo = 0;
 		for (Magos magos : listaMagos) {
-			if (magos.calcularPuntaje() > maximo) {
-				mejor = magos;
-				maximo = magos.calcularPuntaje();
+			System.out.println(magos.getNombreMago());
+		}
+	}
+	
+	public void menuAdministrador(Scanner scan) {
+		scan.nextLine();
+		boolean verAdmin = true;
+		
+		while (verAdmin) {
+			System.out.println("1) agregar mago");
+			System.out.println("2) modificar Mago");
+			System.out.println("3) eliminar Mago");
+			System.out.println("4) agregar hechizo");
+			System.out.println("5) modificar hechizo");
+			System.out.println("6) eliminar hechizo");
+			System.out.println("7) salir");
+			System.out.println("");
+			System.out.print("ingrese opcion: ");
+			int opcion = scan.nextInt();
+			
+			switch(opcion) {
+			 case 1:
+				 agregarMago(scan);
 			}
 			
-			System.out.println(magos.getNombreMago()+": " +magos.calcularPuntaje());	
 		}
-		System.out.println();
-		System.out.println("el mejor mago fue: " + mejor.getNombreMago());
+		
+		
+	}
 
+	@Override
+	public void agregarMago(Scanner scan) {
+		System.out.print("ingrese nombre de mago: ");
+		String nombre = scan.nextLine();
+		
+		Magos m = new Magos(nombre);
+		listaMagos.add(m);
+		System.out.println("creado");
+		System.out.println("");
+		
+		
 	}
 
 }

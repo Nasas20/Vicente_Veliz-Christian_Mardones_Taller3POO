@@ -13,6 +13,10 @@ public class Magos {
 		this.listaHechizos = listaHechizos;
 	}
 	
+	public Magos (String nombre) {
+		this.nombreMago = nombre;
+	}
+	
 	
 	public double calcularPuntaje() {
 		
