@@ -38,6 +38,8 @@ public class Main {
 				 sistema.menuAdministrador(scan);
 				 break;
 			 case 2:
+				 sistema.menuAnalista();
+				 break;
 			 case 3:
 			}
 			

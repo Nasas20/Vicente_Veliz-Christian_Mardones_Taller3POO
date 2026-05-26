@@ -141,16 +141,43 @@ public class Sistema implements Metodos {
 			
 			switch(opcion) {
 			 case 1:
-				 agregarMago(scan);
+				 agregarMago();
+				 break;
+			 case 2:
+				 System.out.println("hacer ");
+			 case 3: 
+				 elimininarMago(scan);
+				 break;
+			 case 4:
+				 agregarHechizo();
+				 break;
+				 
+			 case 7:
+				 verAdmin = false;
+				 break;
 			}
+			
 			
 		}
 		
 		
 	}
+	
+	public void menuAnalista() {
+		System.out.println("1) top 10 mejores magos: ");
+		System.out.println("2) top 3 mejores magos: ");
+		System.out.println("3) mostrar todos los hechizos: ");
+		System.out.println("4) mostrar todos los magos: ");
+		System.out.println("5) mostrar todos los hechizos junto a su puntuacion: ");
+		System.out.println("6)mostrar todos los magos junto a su puntuacion: ");
+		
+		
+		
+	}
 
 	@Override
-	public void agregarMago(Scanner scan) {
+	public void agregarMago() {
+		Scanner scan = new Scanner(System.in);
 		System.out.print("ingrese nombre de mago: ");
 		String nombre = scan.nextLine();
 		
@@ -158,6 +185,97 @@ public class Sistema implements Metodos {
 		listaMagos.add(m);
 		System.out.println("creado");
 		System.out.println("");
+		
+		
+	}
+
+	@Override
+	public void elimininarMago(Scanner scan) {
+		
+		int contador = 1;
+		for (Magos m : listaMagos) {
+			System.out.println(contador +")" +" "+ m.getNombreMago());
+			contador++;
+			
+			
+		}
+		System.out.println("");
+		System.out.println("cual desea eliminar (elija el numero): ");
+		int opcion = scan.nextInt();
+		listaMagos.remove(opcion-1);
+		System.out.println("mago eliminado");
+		System.out.println("");
+		
+
+	}
+
+	@Override
+	public void agregarHechizo() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("cual es el tipo de hechizo: ");
+		String opcion = scan.nextLine().toLowerCase().trim();
+		
+		switch (opcion) {
+		case "fuego":
+			System.out.print("nombre hechizo: ");
+			String nombre = scan.nextLine();
+			System.out.print("daño: ");
+			int daño = scan.nextInt();
+			scan.nextLine();
+			System.out.print("duracion quemaduras: ");
+			int duracion = scan.nextInt();
+			
+			Hechizos h = new Fuego(nombre,opcion,daño,duracion);
+			listaHechizos.add(h);
+		
+		case "tierra":
+			System.out.print("nombre hechizo: ");
+			String nombreTierra = scan.nextLine();
+			System.out.print("daño: ");
+			int dañoTierra = scan.nextInt();
+			scan.nextLine();
+			System.out.print("mejora defensa: ");
+			int mejora = scan.nextInt();
+			
+			Hechizos tierra = new Tierra(nombreTierra,opcion,dañoTierra,mejora);
+			listaHechizos.add(tierra);
+			
+		case "planta":
+			System.out.print("nombre hechizo: ");
+			String nombrePlanta = scan.nextLine();
+			System.out.print("daño: ");
+			int dañoPlanta = scan.nextInt();
+			scan.nextLine();
+			System.out.print("duracion quemaduras: ");
+			int duracionStun = scan.nextInt();
+			scan.nextLine();
+			System.out.println("cantidad de plantas: ");
+			int cantPlantas = scan.nextInt();
+			
+			Hechizos planta = new Planta(nombrePlanta,opcion,dañoPlanta,duracionStun,cantPlantas);
+			listaHechizos.add(planta);
+			
+		case "agua":
+			System.out.print("nombre hechizo: ");
+			String nombreAgua = scan.nextLine();
+			System.out.print("daño: ");
+			int dañoAgua = scan.nextInt();
+			scan.nextLine();
+			System.out.print("duracion quemaduras: ");
+			int heal = scan.nextInt();
+			scan.nextLine();
+			System.out.println("presion de agua: ");
+			int presion = scan.nextInt();
+			
+			Hechizos agua = new Agua(nombreAgua,opcion,dañoAgua,heal,presion);
+			listaHechizos.add(agua);
+			
+			
+		default:
+			System.out.println("no se encontro ese tipo de hechizo");
+			break;
+			
+		}
 		
 		
 	}
