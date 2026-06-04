@@ -144,7 +144,9 @@ public class Sistema implements Metodos {
 				 agregarMago();
 				 break;
 			 case 2:
-				 System.out.println("hacer ");
+				 modificarMago();
+				 break;
+				 
 			 case 3: 
 				 elimininarMago(scan);
 				 break;
@@ -277,6 +279,24 @@ public class Sistema implements Metodos {
 			
 		}
 		
+		
+	}
+
+	@Override
+	public void modificarMago() {
+		int contador = 1;
+		Scanner scan = new Scanner(System.in);
+		for (Magos m : listaMagos) {
+			System.out.println(contador +")"+m.getNombreMago());
+			contador++;
+
+		}
+		System.out.println("dime cual quieres modificar: ");
+		int opcion = scan.nextInt();
+		
+		System.out.println("");
+		
+		System.out.println("");
 		
 	}
 
