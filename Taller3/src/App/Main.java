@@ -6,6 +6,9 @@ import java.util.Scanner;
 import Logica.Metodos;
 import Logica.Sistema;
 
+//Hola nasas
+
+
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -14,14 +17,6 @@ public class Main {
 		sistema.leerHechizoz();
 		sistema.leerMagos();
 		//sistema.mostrar();
-		
-		
-
-		
-		
-		
-		
-		
 		boolean verMenu = true;
 		
 		while (verMenu) {
@@ -42,12 +37,6 @@ public class Main {
 				 break;
 			 case 3:
 			}
-			
-			
 		}
-		
-		
-		
 	}
-
 }
