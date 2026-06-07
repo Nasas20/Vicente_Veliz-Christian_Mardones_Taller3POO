@@ -13,8 +13,13 @@ public class Fuego extends Hechizos {
 		
 		return getDaño() * duracionQuemadura;
 	}
-
 	
+	public void setDuracionQuemadura(int duracionQuemadura) {
+	    this.duracionQuemadura = duracionQuemadura;
+	}
 	
-
+	public int getDuracionQuemadura() {
+	    return duracionQuemadura;
+	}
+	
 }

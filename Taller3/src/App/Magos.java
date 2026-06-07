@@ -34,6 +34,10 @@ public class Magos {
 	public String getNombreMago() {
 		return nombreMago;
 	}
+	
+	public void setNombreMago(String nombreMago) {
+	    this.nombreMago = nombreMago;
+	}
 
 
 	public ArrayList<Hechizos> getListaHechizos() {
@@ -49,14 +53,6 @@ public class Magos {
 	public static void setTotal(double total) {
 		Magos.total = total;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

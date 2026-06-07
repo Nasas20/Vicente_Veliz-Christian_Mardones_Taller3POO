@@ -13,5 +13,6 @@ public interface Metodos {
 	public void elimininarMago(Scanner scan);
 	public void agregarHechizo();
 	public void modificarMago();
-
+	public void modificarHechizo();
+	public void eliminarHechizo();
 }

@@ -23,8 +23,11 @@ public class Planta extends Hechizos {
 		
 		return getDaño() + (stun * cantPlantas);
 	}
-
 	
-	
-
+	public void setStun(int stun) {
+	    this.stun = stun;
+	}
+	public void setCantPlantas(int cantPlantas) {
+	    this.cantPlantas = cantPlantas;
+	}
 }

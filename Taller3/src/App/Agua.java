@@ -23,9 +23,13 @@ public class Agua extends Hechizos {
 		
 		return (getDaño() + getCantidadHeal() + getPresionAgua())*2;
 	}
-
 	
+	public void setCantidadHeal(int cantidadHeal) {
+	    this.cantidadHeal = cantidadHeal;
+	}
 	
+	public void setPresionAgua(int presionAgua) {
+	    this.presionAgua = presionAgua;
+	}
 	
-
 }

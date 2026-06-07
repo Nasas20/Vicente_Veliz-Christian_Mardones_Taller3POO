@@ -17,7 +17,9 @@ public class Tierra extends Hechizos {
 		
 		return (getDaño()*mejoraDefensa)/2;
 	}
-
 	
-
+	public void setMejoraDefensa(int mejoraDefensa) {
+	    this.mejoraDefensa = mejoraDefensa;
+	}
+	
 }

@@ -23,10 +23,14 @@ public abstract class Hechizos {
 		return daño;
 	}
 	
+	public void setNombreHechizo(String nombreHechizo) {
+	    this.nombreHechizo = nombreHechizo;
+	}
+
+	public void setDaño(int daño) {
+	    this.daño = daño;
+	}
 	
 	
 	public abstract double calcular();
-	
-	
-
 }
