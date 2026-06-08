@@ -28,39 +28,31 @@ public class Sistema implements Metodos {
 		int n = 1;
 		
 		while (scan.hasNextLine()) {
-			String linea = scan.nextLine();
-			String[] partes = linea.split(";");
-			
-			String nombre = partes[0].trim().toLowerCase();
-			String hechizos = partes[1];
-			
-			String[] magic = hechizos.split("\\|");
-			
-			ArrayList<Hechizos> magia = new ArrayList<>();
-			
-			
-			for (int i = 0; i < magic.length;i++) {
-				for (Hechizos h : listaHechizos) {
-					if (h.getNombreHechizo().equalsIgnoreCase(magic[i])) {
-						magia.add(h);
-						
-						
-					}
-					
-				}
-			}
-			
-			Magos m = new Magos(nombre, magia);
-			if (magia.isEmpty()) {
-				System.out.println("corre" + n);
-				n++;
-			}
-			listaMagos.add(m);
-					
+		    String linea = scan.nextLine();
 
+		    if (!linea.trim().isEmpty()) {
+		        String[] partes = linea.split(";");
+		        String nombre = partes[0].trim();
+
+		        if (partes.length >= 2 && !partes[1].trim().isEmpty()) {
+		            String[] magic = partes[1].split("\\|");
+		            ArrayList<Hechizos> magia = new ArrayList<>();
+
+		            for (int i = 0; i < magic.length; i++) {
+		                for (Hechizos h : listaHechizos) {
+		                    if (h.getNombreHechizo().equalsIgnoreCase(magic[i].trim())) {
+		                        magia.add(h);
+		                    }
+		                }
+		            }
+
+		            listaMagos.add(new Magos(nombre, magia));
+
+		        } else {
+		            listaMagos.add(new Magos(nombre));
+		        }
+		    }
 		}
-		
-
 	}
 
 	@Override
@@ -199,7 +191,16 @@ public class Sistema implements Metodos {
 	        System.out.println("6) Mostrar todos los magos con puntuacion");
 	        System.out.println("7) Volver");
 	        System.out.print("ingrese opcion: ");
-	        int opcion = scan.nextInt();
+	        int opcion = 0;
+	        
+	        try {
+				opcion = scan.nextInt();
+			} catch (Exception e) {
+				System.out.println("Error! : " + e);
+				System.out.println("Ingrese un valor valido.");
+				scan.nextLine();
+				// TODO: handle exception
+			}
 
 	        switch (opcion) {
 	            case 1: 
@@ -259,8 +260,26 @@ public class Sistema implements Metodos {
 			
 		}
 		System.out.println("");
-		System.out.println("cual desea eliminar (elija el numero): ");
-		int opcion = scan.nextInt();
+		int opcion = 0;
+		
+		while (opcion > contador-1 || opcion < 1 ) {
+	    	System.out.println();
+	    	System.out.println("cual desea eliminar (elija el numero): ");
+	    	try {
+				opcion = scan.nextInt();
+				
+				if (opcion > contador-1 || opcion < 1 ) {
+					System.out.println("Escoja una opcion valida.");
+				}
+				
+			} catch (Exception e) {
+				System.out.println("Error! : " + e);
+				System.out.println("Ingrese un valor valido.");
+				scan.nextLine();
+				// TODO: handle exception
+			}
+	    }
+		
 		listaMagos.remove(opcion-1);
 		System.out.println("mago eliminado");
 		System.out.println("");
@@ -355,10 +374,12 @@ public class Sistema implements Metodos {
 	        contador++;
 	    }
 
-	    System.out.print("dime cual quieres modificar: ");
+	    
 	    int opcion = 0;
 	    
 	    while (opcion > contador-1 || opcion < 1 ) {
+	    	System.out.println();
+	    	System.out.print("dime cual quieres modificar: ");
 	    	try {
 				opcion = scan.nextInt();
 				
@@ -384,8 +405,16 @@ public class Sistema implements Metodos {
 	        System.out.println("3) Eliminar hechizo");
 	        System.out.println("4) Volver");
 	        System.out.print("ingrese opcion: ");
-	        int subOpcion = scan.nextInt();
-	        scan.nextLine();
+	        int subOpcion = 0;
+	        
+	        try {
+				subOpcion = scan.nextInt();
+			} catch (Exception e) {
+				System.out.println("Error! : " + e);
+				System.out.println("Ingrese un valor valido.");
+				scan.nextLine();
+				// TODO: handle exception
+			}
 
 	        switch (subOpcion) {
 	            case 1:
@@ -402,8 +431,27 @@ public class Sistema implements Metodos {
 	                    System.out.println(cont + ") " + h.getNombreHechizo());
 	                    cont++;
 	                }
-	                System.out.print("Elige el numero del hechizo a agregar: ");
-	                int numAgregar = scan.nextInt();
+	                int numAgregar = 0;
+	                
+	                while (numAgregar > cont-1 || numAgregar < 1 ) {
+	        	    	System.out.println();
+	        	    	System.out.print("Elige el numero del hechizo a agregar: ");
+	        	    	try {
+	        				numAgregar = scan.nextInt();
+	        				
+	        				if (numAgregar > cont-1 || cont < 1 ) {
+	        					System.out.println("Escoja una opcion valida.");
+	        				}
+	        				
+	        			} catch (Exception e) {
+	        				System.out.println("Error! : " + e);
+	        				System.out.println("Ingrese un valor valido.");
+	        				scan.nextLine();
+	        				// TODO: handle exception
+	        			}
+	        	    }
+	                
+	                
 	                scan.nextLine();
 	                Hechizos hNuevo = listaHechizos.get(numAgregar - 1);
 	                if (!magoSeleccionado.getListaHechizos().contains(hNuevo)) {
@@ -423,8 +471,28 @@ public class Sistema implements Metodos {
 	                        System.out.println(cont2 + ") " + h.getNombreHechizo());
 	                        cont2++;
 	                    }
-	                    System.out.print("Elige el numero del hechizo a eliminar: ");
-	                    int numEliminar = scan.nextInt();
+	                    int numEliminar = 0;
+	                    
+	                    while (numEliminar > cont2-1 || numEliminar < 1 ) {
+		        	    	System.out.println();
+		        	    	System.out.print("Elige el numero del hechizo a eliminar: ");
+		        	    	try {
+		        	    		numEliminar = scan.nextInt();
+		        				
+		        				if (numEliminar > cont2-1 || cont2 < 1 ) {
+		        					System.out.println("Escoja una opcion valida.");
+		        				}
+		        				
+		        			} catch (Exception e) {
+		        				System.out.println("Error! : " + e);
+		        				System.out.println("Ingrese un valor valido.");
+		        				scan.nextLine();
+		        				// TODO: handle exception
+		        			}
+		        	    }
+	                    
+	                    
+	                    
 	                    scan.nextLine();
 	                    magoSeleccionado.getListaHechizos().remove(numEliminar - 1);
 	                    System.out.println("Hechizo eliminado.");
@@ -451,9 +519,25 @@ public class Sistema implements Metodos {
 	        contador++;
 	    }
 
-	    System.out.print("Cual desea modificar: ");
-	    int opcion = scan.nextInt();
-	    scan.nextLine();
+	    int opcion = 0;
+	    
+	    while (opcion > contador-1 || opcion < 1 ) {
+	    	System.out.println();
+	    	System.out.print("Cual desea modificar: ");
+	    	try {
+	    		opcion = scan.nextInt();
+				
+				if (opcion > contador-1 || contador < 1 ) {
+					System.out.println("Escoja una opcion valida.");
+				}
+				
+			} catch (Exception e) {
+				System.out.println("Error! : " + e);
+				System.out.println("Ingrese un valor valido.");
+				scan.nextLine();
+				// TODO: handle exception
+			}
+	    }
 
 	    Hechizos seleccionado = listaHechizos.get(opcion - 1);
 
@@ -462,8 +546,19 @@ public class Sistema implements Metodos {
 	    System.out.println("2) Cambiar daño");
 	    System.out.println("3) Cambiar atributos especificos");
 	    System.out.print("ingrese opcion: ");
-	    int subOpcion = scan.nextInt();
-	    scan.nextLine();
+	    int subOpcion = 0;
+	    
+	    try {
+			subOpcion = scan.nextInt();
+			scan.nextLine();
+		} catch (Exception e) {
+			System.out.println("Error! : " + e);
+			System.out.println("Ingrese un valor valido.");
+			scan.nextLine();
+			// TODO: handle exception
+		}
+	    
+	    
 
 	    switch (subOpcion) {
 	        case 1:
@@ -475,7 +570,18 @@ public class Sistema implements Metodos {
 
 	        case 2:
 	            System.out.print("Nuevo daño: ");
-	            int nuevoDaño = scan.nextInt();
+	            int nuevoDaño = 0;
+	            
+	            try {
+					nuevoDaño = scan.nextInt();
+				} catch (Exception e) {
+					System.out.println("Error! : " + e);
+					System.out.println("Ingrese un valor valido.");
+					scan.nextLine();
+					break;
+					// TODO: handle exception
+				}
+	            
 	            seleccionado.setDaño(nuevoDaño);
 	            System.out.println("Daño actualizado.");
 	            break;
@@ -494,9 +600,30 @@ public class Sistema implements Metodos {
 	            } else if (seleccionado instanceof Planta) {
 	                Planta p = (Planta) seleccionado;
 	                System.out.print("Nuevo stun: ");
-	                p.setStun(scan.nextInt());
+	                int stun = 0;
+	                
+	                try {
+						stun = scan.nextInt();
+					} catch (Exception e) {
+						System.out.println("Error! : " + e);
+						System.out.println("Ingrese un valor valido.");
+						break;
+						// TODO: handle exception
+					}
+	                p.setStun(stun);
 	                System.out.print("Nueva cantidad de plantas: ");
-	                p.setCantPlantas(scan.nextInt());
+	                
+	                int cantPlantas = 0;
+	                try {
+						cantPlantas = scan.nextInt();
+					} catch (Exception e) {
+						System.out.println("Error! : " + e);
+						System.out.println("Ingrese un valor valido.");
+						break;
+						// TODO: handle exception
+					}
+	                
+	                p.setCantPlantas(cantPlantas);
 
 	            } else if (seleccionado instanceof Agua) {
 	                Agua a = (Agua) seleccionado;
@@ -523,8 +650,25 @@ public class Sistema implements Metodos {
 	        contador++;
 	    }
 
-	    System.out.print("Cual desea eliminar (elija el numero): ");
-	    int opcion = scan.nextInt();
+	    int opcion = 0;
+	    
+	    while (opcion > contador-1 || opcion < 1 ) {
+	    	System.out.println();
+	    	System.out.print("Cual desea eliminar (elija el numero): ");
+	    	try {
+	    		opcion = scan.nextInt();
+				
+				if (opcion > contador-1 || contador < 1 ) {
+					System.out.println("Escoja una opcion valida.");
+				}
+				
+			} catch (Exception e) {
+				System.out.println("Error! : " + e);
+				System.out.println("Ingrese un valor valido.");
+				scan.nextLine();
+				// TODO: handle exception
+			}
+	    }
 
 	    Hechizos aEliminar = listaHechizos.get(opcion - 1);
 

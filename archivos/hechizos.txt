@@ -1,90 +1,89 @@
-Escaldar;Agua;110;45,360
-Tumba Rocas;Tierra;18;40
-Polen Somnífero;Planta;81;3,10
-Bofetón Lodo;Tierra;65;24
-Muro de Arena;Tierra;100;33
-Clorofila;Planta;102;3,2
-Energibola;Planta;79;2,2
-Hidroariete;Agua;39;24,261
-Calcinación;Fuego;21;4
-Rueda Fuego;Fuego;80;1
-Concha Filo;Agua;97;12,264
-Hidrobomba;Agua;106;74,392
-Cascada;Agua;44;1,398
-Ascuas;Fuego;77;5
-Lanzarrocas;Tierra;33;11
-Silvato;Planta;54;1,1
-Llamarada Azul;Fuego;44;1
-Semilladora;Planta;94;2,7
-Absorber;Planta;29;1,5
-Drenadoras;Planta;37;1,7
-Salmuera;Agua;61;26,402
-Lanzallamas;Fuego;38;5
-Campo de Gracia;Planta;32;3,3
-Taladradora;Tierra;77;8
-Roca Afilada;Tierra;37;23
-Estallido;Fuego;28;4
-Hidrocarga;Agua;66;66,147
-Rayo Solar;Planta;86;3,3
-Hoja Aguda;Planta;64;1,10
-Fuego Fatuo;Fuego;104;3
-Día Soleado;Fuego;107;5
-Llamarada;Fuego;101;1
-Danza Lluvia;Agua;16;67,40
-Mina Ígnea;Fuego;103;5
-Shuriken de Agua;Agua;35;65,14
-Danza Pétalo;Planta;73;2,5
-Pistola Agua;Agua;97;77,61
-Hierba Lazo;Planta;40;2,8
-Terremoto;Tierra;68;7
-Torbellino;Agua;19;15,166
-Poder Pasado;Tierra;110;28
-Pedrada;Tierra;52;14
-Hoja Afilada;Planta;69;2,9
-Filo del Abismo;Tierra;80;34
-Fogonazo;Fuego;53;1
-Arraigo;Planta;62;3,10
-Magnitud;Tierra;144;16
-Fuerza Equina;Tierra;136;33
-Tormenta de Arena;Tierra;103;20
-Puño Fuego;Fuego;87;3
-Surf;Agua;31;76,267
-Huesomerang;Tierra;14;14
-Acua Aro;Agua;105;15,474
-Romperrocas;Tierra;131;11
-Espora;Planta;74;1,8
-Gigadrenado;Planta;34;1,5
-Hidropulso;Agua;53;6,172
-Vórtice Ígneo;Fuego;20;4
-Rayo Burbuja;Agua;53;65,242
-Acua Jet;Agua;92;32,252
-Burbuja;Agua;24;29,292
-Excavar;Tierra;129;40
-Pulso de Agua;Agua;35;24,415
-Megaagotar;Planta;84;3,6
-Sofoco;Fuego;36;4
-Colmillo Igneo;Fuego;26;2
-Infierno;Fuego;26;4
-Hueso Palo;Tierra;40;35
-Inmersión;Agua;55;78,242
-Nitrocarga;Fuego;62;5
-Terratemblor;Tierra;131;28
-Agua Lodosa;Agua;62;39,429
-Avalancha;Tierra;131;16
-Bomba Germen;Planta;105;2,4
-Explosión Ígnea;Fuego;61;3
-Martillazo;Agua;108;54,448
-Látigo Cepa;Planta;23;3,4
-Pirotecnia;Fuego;52;3
-Disparo Lodo;Tierra;48;29
-Giro Fuego;Fuego;119;2
-Latigazo;Planta;93;1,1
-Envite Igneo;Fuego;47;4
-Patada Ígnea;Fuego;82;1
-Fuego Sagrado;Fuego;38;5
-Hoja Mágica;Planta;52;1,10
-Mazazo;Planta;105;1,2
-Ataque Arena;Tierra;102;40
-Tierra Viva;Tierra;46;36
-Origen Pulso;Agua;21;30,208
-Bucle Arena;Planta;15;2,8
+Escaldar;agua;110;45,360
+Tumba Rocas;tierra;18;40
+Polen Somnífero;planta;81;3,10
+Bofetón Lodo;tierra;65;24
+Muro de Arena;tierra;100;33
+Clorofila;planta;102;3,2
+Energibola;planta;79;2,2
+Hidroariete;agua;39;24,261
+Calcinación;fuego;21;4
+Rueda Fuego;fuego;80;1
+Concha Filo;agua;97;12,264
+Hidrobomba;agua;106;74,392
+Cascada;agua;44;1,398
+Ascuas;fuego;77;5
+Lanzarrocas;tierra;33;11
+Silvato;planta;54;1,1
+Llamarada Azul;fuego;44;1
+Semilladora;planta;94;2,7
+Absorber;planta;29;1,5
+Drenadoras;planta;37;1,7
+Salmuera;agua;61;26,402
+Lanzallamas;fuego;38;5
+Campo de Gracia;planta;32;3,3
+Taladradora;tierra;77;8
+Roca Afilada;tierra;37;23
+Estallido;fuego;28;4
+Hidrocarga;agua;66;66,147
+Rayo Solar;planta;86;3,3
+Hoja Aguda;planta;64;1,10
+Fuego Fatuo;fuego;104;3
+Día Soleado;fuego;107;5
+Llamarada;fuego;101;1
+Danza Lluvia;agua;16;67,40
+Mina Ígnea;fuego;103;5
+Shuriken de Agua;agua;35;65,14
+Danza Pétalo;planta;73;2,5
+Pistola Agua;agua;97;77,61
+Hierba Lazo;planta;40;2,8
+Terremoto;tierra;68;7
+Torbellino;agua;19;15,166
+Poder Pasado;tierra;110;28
+Pedrada;tierra;52;14
+Hoja Afilada;planta;69;2,9
+Filo del Abismo;tierra;80;34
+Fogonazo;fuego;53;1
+Arraigo;planta;62;3,10
+Magnitud;tierra;144;16
+Fuerza Equina;tierra;136;33
+Tormenta de Arena;tierra;103;20
+Puño Fuego;fuego;87;3
+Surf;agua;31;76,267
+Huesomerang;tierra;14;14
+Acua Aro;agua;105;15,474
+Romperrocas;tierra;131;11
+Espora;planta;74;1,8
+Gigadrenado;planta;34;1,5
+Hidropulso;agua;53;6,172
+Vórtice Ígneo;fuego;20;4
+Rayo Burbuja;agua;53;65,242
+Acua Jet;agua;92;32,252
+Burbuja;agua;24;29,292
+Excavar;tierra;129;40
+Pulso de Agua;agua;35;24,415
+Megaagotar;planta;84;3,6
+Sofoco;fuego;36;4
+Colmillo Igneo;fuego;26;2
+Infierno;fuego;26;4
+Hueso Palo;tierra;40;35
+Inmersión;agua;55;78,242
+Nitrocarga;fuego;62;5
+Terratemblor;tierra;131;28
+Agua Lodosa;agua;62;39,429
+Avalancha;tierra;131;16
+Bomba Germen;planta;105;2,4
+Explosión Ígnea;fuego;61;3
+Martillazo;agua;108;54,448
+Látigo Cepa;planta;23;3,4
+Pirotecnia;fuego;52;3
+Disparo Lodo;tierra;48;29
+Giro Fuego;fuego;119;2
+Latigazo;planta;93;1,1
+Envite Igneo;fuego;47;4
+Patada Ígnea;fuego;82;1
+Fuego Sagrado;fuego;38;5
+Hoja Mágica;planta;52;1,10
+Mazazo;planta;105;1,2
+Ataque Arena;tierra;102;40
+Tierra Viva;tierra;46;36
+Origen Pulso;agua;21;30,208
