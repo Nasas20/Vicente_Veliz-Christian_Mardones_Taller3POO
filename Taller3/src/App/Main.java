@@ -1,3 +1,6 @@
+//Vicente Veliz | Carrera : ICCI | 22.012.230-1
+//Christian Mardones | Carrera : ICCI | 22.026.428-9
+
 package App;
 
 import java.io.FileNotFoundException;
@@ -5,9 +8,6 @@ import java.util.Scanner;
 
 import Logica.Metodos;
 import Logica.Sistema;
-
-//Hola nasas
-
 
 public class Main {
 
